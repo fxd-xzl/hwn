@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0>
+	<!-- 数据库连接地址 -->
+	<SQL_URL>jdbc:mysql://localhost:3306/Department?useSSL=true&amp;serverTimezone=GMT&amp;rewriteBatchedStatements=true&amp;useOldAliasMetadataBehavior=true</SQL_URL>
+	<!-- 数据库连接驱动 -->
+	<SQL_DRIVER>com.mysql.cj.jdbc.Driver</SQL_DRIVER>
+	<!-- 用户名 -->
+	<USERNAME>root</USERNAME>
+	<!-- 密码 -->
+	<PASSWORD>root</PASSWORD>
+	<!-- 初始化连接数 -->
+	<InitialPoolSize>5</InitialPoolSize>
+	<!-- 最小大连接数 -->
+	<MinPoolSize>50</MinPoolSize>
+	<!-- 最大连接数 -->
+	<MaxPoolSize>50</MaxPoolSize>
+	
+	<CheckoutTimeout>60000</CheckoutTimeout>
+	
+	<MaxIdleTime>60</MaxIdleTime>
+	<idleConnectionTestPeriod>60</idleConnectionTestPeriod>
+	 <!-- 当连接池中已经没有连接时，连接池自动获取连接时一次获取的连接个数 -->
+	<acquireIncrement>3</acquireIncrement>
+	<maxStatements>0</maxStatements>
+</c3p0>
