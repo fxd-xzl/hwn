@@ -30,11 +30,11 @@ import net.sf.json.JSONObject;
  */
 public class BaseAction {
 
-	protected final String admin_session="admin";
+	protected final String ADMIN_SESSION="admin";
 	protected JSONObject jsonObj;
 	protected Admin getAdmin(HttpServletRequest request){
 		
-		return (Admin) request.getSession().getAttribute(admin_session);
+		return (Admin) request.getSession().getAttribute(ADMIN_SESSION);
 	};
 	/**
 	 * 结果输出

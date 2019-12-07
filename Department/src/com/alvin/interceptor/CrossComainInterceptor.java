@@ -34,7 +34,7 @@ public class CrossComainInterceptor extends BaseAction implements HandlerInterce
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object arg2) throws Exception {
 		String Referer=request.getHeader("Referer");
-		if (Referer==null||Referer.indexOf("swagger-ui")>0||Referer.indexOf("192.168")	>-1) {
+		if (Referer==null||Referer.indexOf("swagger-ui")>0) {
 			return true;
 		}
 		crossComain(response, request);

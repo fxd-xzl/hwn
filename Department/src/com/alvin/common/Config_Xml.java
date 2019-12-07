@@ -18,10 +18,10 @@ public class Config_Xml {
 	private static Map<String, Object> map;
 	 
 	public static String config_path;
-	
+	public static String LoginService;
  
 	public static void getConfig(){
-		 
+		LoginService=map.get("LoginService").toString();
 	}
 	
 

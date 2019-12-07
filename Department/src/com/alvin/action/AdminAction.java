@@ -11,7 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 import net.sf.json.JSONObject;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
 import com.alvin.common.CodeResult;
+import com.alvin.common.Config_Xml;
+import com.alvin.common.HttpsRequest;
+import com.alvin.common.StringUtil;
 import com.alvin.entity.Admin;
 import com.alvin.service.add.AddAdmin;
 import com.alvin.service.upd.UpdAdmin;
@@ -142,4 +147,34 @@ public class AdminAction extends BaseAction {
 			super.out(response, jsonObj); 
 		 } 
 	 }
+	 
+	 /**
+	  * 获取管理员信息
+	  * @author	:fxd
+	  * @return	:
+	  * @date	:2019-11-28 21:13
+	 */
+	 @ApiOperation(httpMethod="GET",value="通过token获取管理员信息")
+	 @RequestMapping("getAdminInfo")
+	 public void getAdminInfo(HttpServletRequest request,HttpServletResponse response,@RequestParam String token){
+		 JSONObject jsonObj = new JSONObject();
+		try {	
+			jsonObj=HttpsRequest.httpRequest(Config_Xml.LoginService+"admin/getAdminInfo", "POST","type=2&token="+token);
+			if (jsonObj!=null) {
+				Admin admin=JSON.parseObject(jsonObj.toString(),new TypeReference<Admin>(){});
+				request.getSession().setAttribute(ADMIN_SESSION, admin);
+				return;
+			}
+			else{
+				jsonObj=new JSONObject();
+				CodeResult.setResult(jsonObj, 99);
+			}
+		} catch (Exception e) {
+			CodeResult.setResult(jsonObj, 99);
+			e.printStackTrace();
+		} finally {
+			super.out(response, jsonObj);
+		}
+	 }
+	 
 }
