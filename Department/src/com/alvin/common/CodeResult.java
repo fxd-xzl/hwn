@@ -52,6 +52,8 @@ public class CodeResult {
 			jsonObj.put("msg", "");return;
 		case 14:
 			jsonObj.put("msg", "不允许添加重复的"+msg);return;
+		case 15:
+			jsonObj.put("msg", "请输入账号或密码");return;
 		default:
 			break;
 		}

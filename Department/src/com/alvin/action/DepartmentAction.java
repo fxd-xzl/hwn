@@ -125,16 +125,16 @@ public class DepartmentAction extends BaseAction {
 	 */
 	 @ApiOperation(httpMethod="GET",value="分页查询")
 	 @RequestMapping("getDepartmentList")
-	 public void getDepartmentList(HttpServletRequest request,HttpServletResponse response,@ModelAttribute Department Department,@RequestParam Integer pageIndex,@RequestParam Integer pageSize) {
+	 public void getDepartmentList(HttpServletRequest request,HttpServletResponse response) {
 		 
 		jsonObj=new JSONObject();
 		 try {
-			
+			/*
 			Map<String, Object> map=new HashMap<String, Object>();
 			map.put("pageIndex", pageIndex);
 			map.put("pageSize", pageSize);
 			SelectDepartment service=new  SelectDepartment(jsonObj);
-			service.getResult(Department,map);
+			service.getResult(Department,map);*/
 
 		 } catch(Exception e) {
 			e.printStackTrace();

@@ -4,6 +4,9 @@ import com.alvin.entity.Admin;
 
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
 import com.alvin.common.DaoException;
 
 /**
@@ -15,6 +18,7 @@ import com.alvin.common.DaoException;
  @date 			:2019-12-02 22:56
  @version 		:版本 3.0
 */
+@Service
 public interface IadminDao{
 	 /**
 	  * 添加
@@ -65,5 +69,7 @@ public interface IadminDao{
 	  *@since
 	 */
 	 Admin selectOneByObj(Admin entity) throws DaoException;
+	 
+
 
 }

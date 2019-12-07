@@ -3,6 +3,9 @@ package com.alvin.dao.impl;
 import com.alvin.dao.DBSource;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
 import com.alvin.dao.IadminDao;
 import com.alvin.entity.Admin;
 import com.alvin.common.ObjectConvertStr;
@@ -17,6 +20,7 @@ import com.alvin.common.DaoException;
  @date 			:2019-12-02 22:56
  @version 		:版本 3.0
 */
+@Service("adminDao")
 public class AdminImpl extends DBSource implements IadminDao{
 
 	 /**
